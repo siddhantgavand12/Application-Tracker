@@ -30,6 +30,12 @@ router.put('/:id', async (req, res) => { // Change from patch to put
     const { id } = req.params;
     const { status } = req.body;
 
+    // Validate the status
+    const validStatuses = ['Applied', 'Shortlisted', 'Interviewed', 'Hired', 'Rejected']; 
+    if (!validStatuses.includes(status)) {
+        return res.status(400).json({ error: 'Invalid status' });
+    }
+
     try {
         const updatedApplication = await Application.findByIdAndUpdate(
             id,
@@ -43,10 +49,9 @@ router.put('/:id', async (req, res) => { // Change from patch to put
 
         res.status(200).json(updatedApplication);
     } catch (err) {
-        res.status(400).json({ error: err.message });
+        res.status(500).json({ error: 'Error updating application: ' + err.message });
     }
 });
-
 
 // Delete an application
 router.delete('/:id', async (req, res) => {

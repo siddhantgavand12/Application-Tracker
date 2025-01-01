@@ -25,16 +25,16 @@ export const createApplication = async (applicationData) => {
         throw error;
     }
 };
-
 export const updateApplication = async (id, applicationData) => {
     try {
-        const response = await axios.patch(`${API_URL}/applications/${id}`, applicationData); // Change `put` to `patch`
+        const response = await axios.put(`${API_URL}/applications/${id}`, applicationData); // Change `patch` to `put`
         return response.data;
     } catch (error) {
         console.error('Error updating application:', error);
         throw error;
     }
 };
+
 
 // Delete an application
 export const deleteApplication = async (id) => {
