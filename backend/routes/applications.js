@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 
 // Update application status
-router.patch('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => { // Change from patch to put
     const { id } = req.params;
     const { status } = req.body;
 
@@ -46,6 +46,7 @@ router.patch('/:id', async (req, res) => {
         res.status(400).json({ error: err.message });
     }
 });
+
 
 // Delete an application
 router.delete('/:id', async (req, res) => {
