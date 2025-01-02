@@ -16,7 +16,7 @@ const Dashboard = () => {
   });
   const [editing, setEditing] = useState(false);
   const [editId, setEditId] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const loadApplications = async () => {
