@@ -6,7 +6,6 @@ import {
   deleteApplication,
 } from "../services/api";
 
-
 const Dashboard = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -99,55 +98,60 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold">Application Tracker for Tapasvi Mhatre</h1>
         </div>
         <div className="flex items-center space-x-4">
-          <button
-            onClick={toggleDarkMode}
-            className={`flex items-center px-4 py-2 rounded-md transition-colors duration-300 ${
-              darkMode ? "bg-gray-200 text-gray-900" : "bg-gray-800 text-white"
-            }`}
-          >
-            {darkMode ? (
-              <>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 3v2m0 14v2m9-9h-2m-14 0H3m16.364-7.364l-1.414 1.414M5.05 5.05l1.414 1.414M18.364 18.364l-1.414-1.414M5.05 18.364l1.414-1.414M12 8a4 4 0 110 8 4 4 0 010-8z"
-                  />
-                </svg>
-                Light Mode
-              </>
-            ) : (
-              <>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
-                  />
-                </svg>
-                Dark Mode
-              </>
-            )}
-          </button>
+        <button
+  onClick={toggleDarkMode}
+  className={`flex items-center px-4 py-2 rounded-md transition-colors duration-300 ${
+    darkMode ? "bg-gray-200 text-gray-900" : "bg-gray-800 text-white"
+  }`}
+>
+  {darkMode ? (
+    <>
+      {/* Sun Icon for Light Mode */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 mr-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 3v2m0 14v2m9-9h-2m-14 0H3m16.364-7.364l-1.414 1.414M5.05 5.05l1.414 1.414M18.364 18.364l-1.414-1.414M5.05 18.364l1.414-1.414M12 8a4 4 0 110 8 4 4 0 010-8z"
+        />
+      </svg>
+      Light Mode
+    </>
+  ) : (
+    <>
+      {/* Moon Icon for Dark Mode */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 mr-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+        />
+      </svg>
+      Dark Mode
+    </>
+  )}
+</button>
 
           <div className="relative">
             <button className="text-white">
               <i className="fa fa-bell"></i>
             </button>
+            {/* <span className="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full px-2">
+              5
+            </span> */}
           </div>
           <div className="flex items-center space-x-3">
             <img src="/user.png" alt="Logo" className="h-10 rounded-md" />
@@ -157,13 +161,13 @@ const Dashboard = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 w-full">
+<main className="flex-1 p-6 w-full">
         <div className={`mb-6 p-4 rounded-lg shadow-md ${darkMode ? "bg-gray-700" : "bg-gray-100"}`}>
-          <div className="flex flex-wrap items-center justify-between space-x-4">
+          <div className="flex items-center justify-between space-x-4">
             <input
               type="text"
               placeholder="Job Title"
-              className={`p-2 border w-full sm:w-1/3 lg:w-1/4 ${
+              className={`p-2 border w-full md:w-1/3 ${
                 darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
               }`}
               name="jobTitle"
@@ -173,7 +177,7 @@ const Dashboard = () => {
             <input
               type="text"
               placeholder="Candidate Name"
-              className={`p-2 border w-full sm:w-1/3 lg:w-1/4 ${
+              className={`p-2 border w-full md:w-1/3 ${
                 darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
               }`}
               name="candidateName"
@@ -181,7 +185,7 @@ const Dashboard = () => {
               onChange={handleChange}
             />
             <button
-              className={`p-2 w-full sm:w-1/4 lg:w-1/5 ${
+              className={`p-2 w-1/4 ${
                 darkMode ? "bg-blue-600 text-white" : "bg-blue-500 text-white"
               }`}
               onClick={editing ? handleUpdate : handleCreate}
@@ -192,7 +196,7 @@ const Dashboard = () => {
 
           <select
             name="status"
-            className={`p-2 border mt-4 w-full sm:w-1/3 lg:w-1/4 ${
+            className={`p-2 border mt-4 w-full md:w-1/3 ${
               darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
             }`}
             value={formData.status}
@@ -226,10 +230,16 @@ const Dashboard = () => {
               applications.map((application) => (
                 <tr
                   key={application._id}
-                  className={`border-b hover:${darkMode ? "bg-gray-600" : "bg-gray-100"} transition-all duration-200 ease-in-out`}
+                  className={`border-b hover:${
+                    darkMode ? "bg-gray-600" : "bg-gray-100"
+                  } transition-all duration-200 ease-in-out `}
                 >
-                  <td className="px-6 py-4 text-center">{application.jobTitle}</td>
-                  <td className="px-6 py-4 text-center">{application.candidateName}</td>
+                  <td className="px-6 py-4 text-center">
+                    {application.jobTitle}
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    {application.candidateName}
+                  </td>
                   <td className="px-6 py-4 text-center">
                     <span
                       className={`px-3 py-1 rounded-full ${
@@ -249,7 +259,9 @@ const Dashboard = () => {
                   </td>
                   <td className="px-6 py-4 text-center">
                     <button
-                      className={`text-sm ${darkMode ? "text-blue-400" : "text-blue-600"} hover:underline p-2 rounded-lg ${
+                      className={`text-sm ${
+                        darkMode ? "text-blue-400" : "text-blue-600"
+                      } hover:underline p-2 rounded-lg ${
                         darkMode
                           ? "bg-gray-600 hover:bg-gray-500"
                           : "bg-blue-100 hover:bg-blue-200"
@@ -259,7 +271,9 @@ const Dashboard = () => {
                       Edit
                     </button>
                     <button
-                      className={`text-sm ${darkMode ? "text-red-400" : "text-red-600"} hover:underline p-2 rounded-lg ${
+                      className={`text-sm ${
+                        darkMode ? "text-red-400" : "text-red-600"
+                      } hover:underline p-2 rounded-lg ${
                         darkMode
                           ? "bg-gray-600 hover:bg-gray-500"
                           : "bg-red-100 hover:bg-red-200"
@@ -275,7 +289,6 @@ const Dashboard = () => {
           </tbody>
         </table>
       </main>
-
       {/* Footer */}
       <footer className="bg-indigo-600 text-white p-4 shadow-md w-full mt-auto">
         <p className="text-center text-sm">
