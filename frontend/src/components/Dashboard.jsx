@@ -107,7 +107,7 @@ const Dashboard = () => {
   <div className="flex items-center space-x-4">
     <button
       onClick={toggleDarkMode}
-      className={`sm:px-0 font-bold flex items-center px-4 py-2 rounded-md transition-colors duration-300 ${
+      className={`font-bold flex items-center px-4 py-2 rounded-md transition-colors duration-300 ${
         darkMode ? "bg-gray-200 text-gray-900" : "bg-gray-800 text-white"
       }`}
     >
