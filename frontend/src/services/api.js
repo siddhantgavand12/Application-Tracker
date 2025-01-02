@@ -28,7 +28,7 @@ export const createApplication = async (applicationData) => {
 
 export const updateApplication = async (id, applicationData) => {
     try {
-        const response = await axios.patch(`${API_URL}/applications/${id}`, applicationData); // Change `put` to `patch`
+        const response = await axios.put(`${API_URL}/applications/${id}`, applicationData); // Change `put` to `patch`
         return response.data;
     } catch (error) {
         console.error('Error updating application:', error);
