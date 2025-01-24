@@ -8,6 +8,7 @@ const API_URL = 'https://application-tracker-cust.onrender.com';  // Update with
 // Fetch all applications
 export const fetchApplications = async () => {
     try {
+        // response
         const response = await axios.get(`${API_URL}/applications`);
         return response.data;
     } catch (error) {
