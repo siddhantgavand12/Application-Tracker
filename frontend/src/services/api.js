@@ -10,6 +10,7 @@ export const fetchApplications = async () => {
     try {
         // response
         const response = await axios.get(`${API_URL}/applications`);
+        // return 
         return response.data;
     } catch (error) {
         console.error('Error fetching applications:', error);
