@@ -40,7 +40,7 @@ export const updateApplication = async (id, applicationData) => {
     }
 };
 
-// Delete an application
+// Delete application 
 export const deleteApplication = async (id) => {
     try {
         const response = await axios.delete(`${API_URL}/applications/${id}`);
