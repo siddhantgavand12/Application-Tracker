@@ -46,7 +46,8 @@ export const deleteApplication = async (id) => {
         const response = await axios.delete(`${API_URL}/applications/${id}`);
         return response.data;
     } catch (error) {
-        console.error('Error deleting application:', error);
+        console.error('Error deleting application:', error); 
+        
         throw error;
     }
 };
