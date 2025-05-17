@@ -1,48 +1,81 @@
+
 # MMC Project
 
 ## Overview
-The MMC Project is designed to [provide a brief description of what the project does]. This project aims to [mention the main goal or purpose of the project].
+The **MMC Project** is a job application tracking system designed to streamline the recruitment workflow. It allows users to add, update, and manage candidate applications efficiently. Admins have secure access to modify application data, while general users can view entries.
 
 ## Features
-- Feature 1: [Description of feature 1]
-- Feature 2: [Description of feature 2]
-- Feature 3: [Description of feature 3]
+- 🔍 **View Applications**: See a list of all job applications and their statuses.
+- ✍️ **Add/Update/Delete**: Admins can create, update, or delete application records.
+- 🔒 **Admin Authentication**: Secure login to manage admin-only access.
+- 🌙 **Dark Mode**: Toggle between light and dark themes for better accessibility.
 
 ## Installation
-To install and set up the project, follow these steps:
 
-1. Clone the repository:
+To install and run the project locally:
+
+1. **Clone the repository**
     ```sh
     git clone https://github.com/yourusername/mmc-project.git
     ```
-2. Navigate to the project directory:
+
+2. **Navigate to the project directory**
     ```sh
     cd mmc-project
     ```
-3. Install the dependencies:
+
+3. **Install dependencies**
     ```sh
     npm install
     ```
 
+4. **Start the development server**
+    ```sh
+    npm start
+    ```
+
+> Make sure your backend server is also running at `http://localhost:5000` as configured in `api.js`.
+
 ## Usage
-To start using the project, run the following command:
-```sh
-npm start
+
+- Visit `http://localhost:3000` in your browser.
+- Click **Admin Login** in the header to log in using:
+  - Username: `admin`
+  - Password: `admin123`
+- Add or update applications as needed.
+- Toggle dark mode using the top-right button.
+
+## Folder Structure
+
 ```
-[Provide additional instructions or examples on how to use the project]
+src/
+├── components/
+│   └── Dashboard.jsx
+│   └── Form.jsx
+├── context/
+│   └── AuthContext.js
+├── services/
+│   └── api.js
+├── App.js
+└── index.js
+```
 
 ## Contributing
-We welcome contributions! Please follow these steps to contribute:
+
+We welcome contributions! Follow these steps to contribute:
 
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
+2. Create a feature branch:
+    ```sh
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```sh
+    git commit -m "Add feature"
+    ```
+4. Push to your branch:
+    ```sh
+    git push origin feature-name
+    ```
+5. Open a pull request.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
-
-## Contact
-For any questions or feedback, please contact [your name] at [your email address].
