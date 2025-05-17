@@ -26,14 +26,14 @@ router.get('/', async (req, res) => {
 });
 
 // Update application status
-router.put('/:id', async (req, res) => { // Change from patch to put
+router.put('/:id', async (req, res) => { 
+    const { jobTitle, candidateName, status } = req.body;
     const { id } = req.params;
-    const { status } = req.body;
 
     try {
         const updatedApplication = await Application.findByIdAndUpdate(
             id,
-            { status },
+            { jobTitle, candidateName, status },
             { new: true } // Return the updated document
         );
 
