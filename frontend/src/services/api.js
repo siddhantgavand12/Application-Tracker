@@ -2,8 +2,8 @@
 import axios from 'axios';
 // api url
 
-// const API_URL = 'https://application-tracker-cust.onrender.com'; 
-const API_URL = 'http://localhost:5000';  
+const API_URL = 'https://application-tracker-cust.onrender.com'; 
+// const API_URL = 'http://localhost:5000';  
 
 // Fetch all applications
 export const fetchApplications = async () => {
