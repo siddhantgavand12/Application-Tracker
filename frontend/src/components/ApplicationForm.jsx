@@ -9,7 +9,9 @@ const ApplicationForm = ({
 }) => {
   const {isAdmin} = useAuth();
   return (
-    <div
+    <div>
+      {isAdmin && (
+        <div
       className={`mb-6 p-4 rounded-lg shadow-md ${
         darkMode ? "bg-gray-700" : "bg-gray-100"
       }`}
@@ -64,6 +66,9 @@ const ApplicationForm = ({
         )}
       </div>
     </div>
+        )}
+    </div>
+    
   );
 };
 
